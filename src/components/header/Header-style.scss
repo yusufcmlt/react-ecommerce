@@ -7,22 +7,28 @@
   border-bottom: 1px solid gray;
 
   .logo-container {
-    width: 75px;
     padding: 25px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
     font-size: 20px;
     font-weight: 700;
 
-    .logo {
-      height: 75px;
-      width: 75px;
-      background-image: url("../../assets/sport-wear.png");
-      background-size: cover;
-      background-position: center;
+    &:hover {
+      font-size: 19px;
+      color: rgb(63, 63, 104);
       transition-duration: 0.1s;
+
+      .logo {
+        background-image: url("../../assets/sport-wear-colored.png");
+      }
     }
-    .logo:hover {
-      background-image: url("../../assets/sport-wear-colored.png");
+
+    .logo {
+      background-image: url("../../assets/sport-wear.png");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
     }
   }
 

@@ -18,7 +18,7 @@ const Header = ({ currentUser, hidden }) => {
     <div className="header">
       <Link className="logo-container" to="/">
         <div className="logo" alt="company-logo" />
-        BUYSOMTN
+        WEARSOMTN
       </Link>
       <div className="options">
         <Link className="option" to="/shop">
