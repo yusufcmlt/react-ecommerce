@@ -55,6 +55,7 @@ class App extends React.Component {
               this.props.currentUser ? <Redirect to="/" /> : <SignInOut />
             }
           />
+          <Route exact path="/contact" component={HomePage} />
         </Switch>
       </div>
     );
