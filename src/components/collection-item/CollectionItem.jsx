@@ -4,7 +4,6 @@ import { withRouter } from "react-router-dom";
 
 import { addItem } from "../../redux/cart/cart-actions";
 
-import CustomButton from "../custom-button/CustomButton";
 import "./CollectionItem-style.scss";
 
 const CollectionItem = ({ item, addItem, history, match }) => {
