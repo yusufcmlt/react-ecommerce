@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
 .checkout-page {
   width: 55%;
   min-height: 90vh;
@@ -11,7 +12,6 @@
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid darkgrey;
 
     .header-block {
       text-transform: capitalize;
@@ -22,10 +22,30 @@
       }
     }
   }
+  .cart-empty-message {
+    font-size: 30px;
+  }
 
   .total {
-    margin-top: 30px;
-    margin-left: auto;
-    font-size: 36px;
+    width: 100%;
+    margin: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+    font-family: "Ubuntu", sans-serif;
+
+    .test-warning {
+      font-size: 15px;
+      text-align: center;
+      font-weight: bold;
+      background-color: rgb(224, 221, 221);
+      padding: 5px;
+    }
+    .payment {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
