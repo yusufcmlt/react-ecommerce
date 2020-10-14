@@ -17,3 +17,10 @@ export const selectCollection = (collectionUrlParam) =>
     [selectCollections],
     (collections) => collections[collectionUrlParam]
   );
+
+export const selectItemDetail = (collectionUrlParam, itemUrlParam) =>
+  createSelector([selectCollections], (collections) =>
+    collections[collectionUrlParam].items.find(
+      (item) => item.id === Number(itemUrlParam)
+    )
+  );
