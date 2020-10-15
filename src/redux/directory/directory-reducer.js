@@ -24,7 +24,7 @@ const INITIAL_STATE = {
     {
       title: "womens",
       imageUrl:
-        "https://images.unsplash.com/photo-1579493934830-eab45746b51b?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80",
+        "https://images.unsplash.com/photo-1588676478262-3d48b5a0c60e?ixlib=rb-1.2.1&auto=format&fit=crop&w=635&q=80",
       size: "large",
       id: 4,
       linkUrl: "shop/womens",

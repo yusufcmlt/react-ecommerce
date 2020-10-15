@@ -21,6 +21,13 @@ const Header = ({ currentUser, hidden }) => {
         WEARSOMTN
       </Link>
       <div className="options">
+        {currentUser ? (
+          <p className="option">
+            {currentUser.displayName
+              ? currentUser.displayName.toUpperCase()
+              : ""}
+          </p>
+        ) : null}
         <Link className="option" to="/shop">
           SHOP
         </Link>

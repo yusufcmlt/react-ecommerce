@@ -23,7 +23,9 @@ const ItemDetail = ({ item, addItem }) => {
         <p className="item-specs">Size: Med </p>
         <p className="item-specs">Color: Orange </p>
         <p className="item-price">${item.price}</p>
-        <CustomButton onClick={() => addItem(item)}>ADD TO CART</CustomButton>
+        <CustomButton addedCart onClick={() => addItem(item)}>
+          ADD TO CART
+        </CustomButton>
       </div>
     </div>
   );

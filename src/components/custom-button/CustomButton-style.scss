@@ -41,4 +41,10 @@
       color: white;
     }
   }
+
+  &.cart-added {
+    &:active {
+      background-color: rgb(63, 170, 86);
+    }
+  }
 }
