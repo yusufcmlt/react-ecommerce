@@ -45,6 +45,10 @@
   &.cart-added {
     &:active {
       background-color: rgb(63, 170, 86);
+      border: none;
+    }
+    &:focus {
+      outline: none;
     }
   }
 }

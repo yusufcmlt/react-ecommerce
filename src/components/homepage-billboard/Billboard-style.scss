@@ -35,6 +35,10 @@
         text-indent: 50px;
         font-family: "Ubuntu", sans-serif;
         font-size: 20px;
+
+        &:focus {
+          outline: 4px solid rgba(77, 76, 76, 0.253);
+        }
       }
       .search-bar {
         display: flex;

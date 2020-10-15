@@ -7,6 +7,7 @@ import "./App.css";
 
 import HomePage from "./pages/homepage/Homepage";
 import ShopPage from "./pages/shop/Shop";
+import Search from "./pages/search/Search";
 import Header from "./components/header/Header";
 import SignInOut from "./pages/signinout-page/SignInOut";
 import CheckOut from "./pages/checkout/Checkout";
@@ -14,7 +15,6 @@ import CheckOut from "./pages/checkout/Checkout";
 import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 import { setCurrentUser } from "./redux/user/user-actions";
 import { selectCurrentUser } from "./redux/user/user-selectors";
-//import userReducer from "./redux/user/user-reducer";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
@@ -48,6 +48,7 @@ class App extends React.Component {
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
           <Route exact path="/checkout" component={CheckOut} />
+          <Route exact path="/search/:searchQuery" component={Search} />
           <Route
             exact
             path="/signin"

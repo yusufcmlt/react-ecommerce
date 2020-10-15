@@ -2,17 +2,17 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import { addItem } from "../../redux/cart/cart-actions";
+import { selectItemCategory } from "../../redux/shop/shop-selectors";
 
 import "./CollectionItem-style.scss";
 
-const CollectionItem = ({ item, addItem, history, match }) => {
+const CollectionItem = ({ item, history, itemCategory }) => {
   const { name, price, imageUrl } = item;
 
   return (
     <div
       className="collection-item"
-      onClick={() => history.push(`${match.url}/${item.id}`)}
+      onClick={() => history.push(`/shop/${itemCategory}/${item.id}`)}
     >
       <div className="image" style={{ backgroundImage: `url(${imageUrl})` }} />
       <div className="item-details">
@@ -23,8 +23,12 @@ const CollectionItem = ({ item, addItem, history, match }) => {
   );
 };
 
-const mapDispatchToProps = (dispatch) => ({
-  addItem: (item) => dispatch(addItem(item)),
+const mapStateToProps = (state, ownProps) => ({
+  itemCategory: selectItemCategory(ownProps.item.name)(state),
 });
 
-export default withRouter(connect(null, mapDispatchToProps)(CollectionItem));
+// const mapDispatchToProps = (dispatch) => ({
+//   addItem: (item) => dispatch(addItem(item)),
+// });
+
+export default withRouter(connect(mapStateToProps)(CollectionItem));
