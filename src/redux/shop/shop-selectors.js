@@ -28,6 +28,7 @@ export const selectItemDetail = (collectionUrlParam, itemUrlParam) =>
 export const selectSearchResultItems = (searchQuery) =>
   createSelector([selectCollectionsForPreview], (collections) => {
     const returnArray = collections.map((collection) => {
+      //eslint-disable-next-line
       return collection.items.filter((item) => {
         if (item.name.toLowerCase().includes(searchQuery.toLowerCase())) {
           return item;

@@ -20,9 +20,9 @@ const ItemDetail = ({ item, addItem }) => {
       <div className="item-details-container">
         <h1 className="item-name">{item.name}</h1>
         <p className="item-description">{LOREM_TEXT}</p>
-        <p className="item-specs">Size: Med </p>
-        <p className="item-specs">Color: Orange </p>
-        <p className="item-price">${item.price}</p>
+        <p className="item-description">Size: Med </p>
+        <p className="item-description">Color: Orange </p>
+        <h2 className="item-price">${item.price}</h2>
         <CustomButton addedCart onClick={() => addItem(item)}>
           ADD TO CART
         </CustomButton>
