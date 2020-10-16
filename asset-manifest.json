@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/react-ecommerce/static/css/main.b6a7c7ee.chunk.css",
+    "main.css": "/react-ecommerce/static/css/main.062bf800.chunk.css",
     "main.js": "/react-ecommerce/static/js/main.104a999f.chunk.js",
     "main.js.map": "/react-ecommerce/static/js/main.104a999f.chunk.js.map",
     "runtime-main.js": "/react-ecommerce/static/js/runtime-main.ea96c490.js",
@@ -8,9 +8,9 @@
     "static/js/2.7eb25cc4.chunk.js": "/react-ecommerce/static/js/2.7eb25cc4.chunk.js",
     "static/js/2.7eb25cc4.chunk.js.map": "/react-ecommerce/static/js/2.7eb25cc4.chunk.js.map",
     "index.html": "/react-ecommerce/index.html",
-    "precache-manifest.ac9e941df836a21a32af41b9d4753398.js": "/react-ecommerce/precache-manifest.ac9e941df836a21a32af41b9d4753398.js",
+    "precache-manifest.78cf32ae0b0369e5230a86920510ac7b.js": "/react-ecommerce/precache-manifest.78cf32ae0b0369e5230a86920510ac7b.js",
     "service-worker.js": "/react-ecommerce/service-worker.js",
-    "static/css/main.b6a7c7ee.chunk.css.map": "/react-ecommerce/static/css/main.b6a7c7ee.chunk.css.map",
+    "static/css/main.062bf800.chunk.css.map": "/react-ecommerce/static/css/main.062bf800.chunk.css.map",
     "static/js/2.7eb25cc4.chunk.js.LICENSE.txt": "/react-ecommerce/static/js/2.7eb25cc4.chunk.js.LICENSE.txt",
     "static/media/shopping-bag.f536f3de.svg": "/react-ecommerce/static/media/shopping-bag.f536f3de.svg",
     "static/media/Header-style.scss": "/react-ecommerce/static/media/sport-wear.5f29d90c.png"
@@ -18,7 +18,7 @@
   "entrypoints": [
     "static/js/runtime-main.ea96c490.js",
     "static/js/2.7eb25cc4.chunk.js",
-    "static/css/main.b6a7c7ee.chunk.css",
+    "static/css/main.062bf800.chunk.css",
     "static/js/main.104a999f.chunk.js"
   ]
 }
