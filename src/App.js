@@ -45,18 +45,38 @@ class App extends React.Component {
       <div>
         <Header />
         <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route path="/shop" component={ShopPage} />
-          <Route exact path="/checkout" component={CheckOut} />
-          <Route exact path="/search/:searchQuery" component={Search} />
           <Route
             exact
-            path="/signin"
+            path={process.env.PUBLIC_URL + "/"}
+            component={HomePage}
+          />
+          <Route path={process.env.PUBLIC_URL + "/shop"} component={ShopPage} />
+          <Route
+            exact
+            path={process.env.PUBLIC_URL + "/checkout"}
+            component={CheckOut}
+          />
+          <Route
+            exact
+            path={process.env.PUBLIC_URL + "/search/:searchQuery"}
+            component={Search}
+          />
+          <Route
+            exact
+            path={process.env.PUBLIC_URL + "/signin"}
             render={() =>
-              this.props.currentUser ? <Redirect to="/" /> : <SignInOut />
+              this.props.currentUser ? (
+                <Redirect to={process.env.PUBLIC_URL + "/"} />
+              ) : (
+                <SignInOut />
+              )
             }
           />
-          <Route exact path="/contact" component={HomePage} />
+          <Route
+            exact
+            path={process.env.PUBLIC_URL + "/contact"}
+            component={HomePage}
+          />
         </Switch>
       </div>
     );

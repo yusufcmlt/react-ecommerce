@@ -12,7 +12,11 @@ const CollectionItem = ({ item, history, itemCategory }) => {
   return (
     <div
       className="collection-item"
-      onClick={() => history.push(`/shop/${itemCategory}/${item.id}`)}
+      onClick={() =>
+        history.push(
+          `${process.env.PUBLIC_URL}/shop/${itemCategory}/${item.id}`
+        )
+      }
     >
       <div className="image" style={{ backgroundImage: `url(${imageUrl})` }} />
       <div className="item-details">

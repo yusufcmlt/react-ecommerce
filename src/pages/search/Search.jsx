@@ -6,7 +6,6 @@ import { selectSearchResultItems } from "../../redux/shop/shop-selectors";
 
 import "./Search-style.scss";
 const Search = ({ resultItems, match }) => {
-  //console.log(resultItems);
   return (
     <div className="search-results-page">
       <h2 className="title">

@@ -16,7 +16,7 @@ import "./Header-style.scss";
 const Header = ({ currentUser, hidden }) => {
   return (
     <div className="header">
-      <Link className="logo-container" to="/">
+      <Link className="logo-container" to={process.env.PUBLIC_URL + "/"}>
         <div className="logo" alt="company-logo" />
         WEARSOMTN
       </Link>
@@ -28,10 +28,10 @@ const Header = ({ currentUser, hidden }) => {
               : ""}
           </p>
         ) : null}
-        <Link className="option" to="/shop">
+        <Link className="option" to={process.env.PUBLIC_URL + "/shop"}>
           SHOP
         </Link>
-        <Link className="option" to="/">
+        <Link className="option" to={process.env.PUBLIC_URL + "/"}>
           CONTACT
         </Link>
         {currentUser ? (
@@ -39,7 +39,7 @@ const Header = ({ currentUser, hidden }) => {
             SIGN OUT
           </div>
         ) : (
-          <Link className="option" to="/signin">
+          <Link className="option" to={process.env.PUBLIC_URL + "/signin"}>
             SIGN IN
           </Link>
         )}

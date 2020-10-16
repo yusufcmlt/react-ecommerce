@@ -14,7 +14,9 @@ class Billboard extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.history.push(`/search/${this.state.searchValue}`);
+    this.props.history.push(
+      `${process.env.PUBLIC_URL}/search/${this.state.searchValue}`
+    );
   };
 
   handleChange = (event) => {
