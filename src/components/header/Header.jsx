@@ -24,9 +24,14 @@ const Header = ({ currentUser, hidden }) => {
         <Link className="option" to={process.env.PUBLIC_URL + "/shop"}>
           SHOP
         </Link>
-        <Link className="option" to={process.env.PUBLIC_URL + "/"}>
+        <a
+          className="option"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://github.com/pdouu/react-ecommerce"
+        >
           CONTACT
-        </Link>
+        </a>
         {currentUser ? (
           <div className="option" onClick={() => auth.signOut()}>
             SIGN OUT
