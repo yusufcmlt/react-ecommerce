@@ -1,9 +1,21 @@
+$break-medium: 768px;
 .sign-up {
   display: flex;
   flex-direction: column;
   width: 380px;
 
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
   .title {
     margin: 10px 0;
+  }
+  @media (max-width: $break-medium) {
+    width: 100%;
+    margin-top: 50px;
+    border-top: 2px solid rgb(218, 77, 77);
+    align-items: center;
   }
 }
