@@ -26,31 +26,32 @@ class Billboard extends React.Component {
   render() {
     return (
       <div className="billboard-container">
-        <div className="search-container">
-          <p className="name wear">WEAR.</p>
-          <p className="name somtn">SOMTN.</p>
-          <form
-            className="search-form"
-            onSubmit={this.handleSubmit}
-            autoComplete="off"
-          >
-            <label>Search for clothes.</label>
-            <div className="search-bar">
-              <input
-                className="billboard-search"
-                type="search"
-                name="searchBar"
-                value={this.state.searchValue}
-                onChange={this.handleChange}
-                placeholder="Sneakers,jackets,hats..."
-                required
-              />
-              <CustomButton type="submit">Search</CustomButton>
-            </div>
-          </form>
-          <p className="suggestion">or check out collections below.</p>
+        <div className="image-container">
+          <div className="search-container">
+            <p className="name wear">WEAR.</p>
+            <p className="name somtn">SOMTN.</p>
+            <form
+              className="search-form"
+              onSubmit={this.handleSubmit}
+              autoComplete="off"
+            >
+              <label>Search for clothes.</label>
+              <div className="search-bar">
+                <input
+                  className="billboard-search"
+                  type="search"
+                  name="searchBar"
+                  value={this.state.searchValue}
+                  onChange={this.handleChange}
+                  placeholder="Sneakers,jackets,hats..."
+                  required
+                />
+                <CustomButton type="submit">Search</CustomButton>
+              </div>
+            </form>
+            <p className="suggestion">or check out collections below.</p>
+          </div>
         </div>
-        <div className="image-container" />
       </div>
     );
   }

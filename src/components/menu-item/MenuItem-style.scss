@@ -1,3 +1,5 @@
+$break-medium: 768px;
+
 .menu-item {
   width: 15vw;
   height: 75vh;
@@ -9,6 +11,11 @@
   overflow: hidden;
   border-radius: 10px;
   border: 1px solid rgba(128, 128, 128, 0.294);
+  @media (max-width: $break-medium) {
+    font-size: 25px;
+    width: 75vw;
+    height: 40vh;
+  }
 
   &:hover {
     cursor: pointer;
@@ -34,9 +41,12 @@
   .title {
     font-weight: bold;
     margin-bottom: 6px;
-    font-size: 40px;
+    font-size: 42px;
     color: #181717;
     visibility: hidden;
     position: absolute;
+    @media (max-width: $break-medium) {
+      font-size: 25px;
+    }
   }
 }

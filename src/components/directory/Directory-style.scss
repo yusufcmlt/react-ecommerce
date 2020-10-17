@@ -1,10 +1,16 @@
+$break-medium: 768px;
 h1 {
   text-align: center;
 }
 
 .directory-menu {
-  width: 100%;
+  width: 75vw;
   display: flex;
   justify-content: center;
   text-align: center;
+  flex-direction: row;
+  @media (max-width: $break-medium) {
+    font-size: 25px;
+    flex-direction: column;
+  }
 }
