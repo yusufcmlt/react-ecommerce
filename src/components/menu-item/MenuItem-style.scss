@@ -12,7 +12,6 @@ $break-medium: 768px;
   border-radius: 10px;
   border: 1px solid rgba(128, 128, 128, 0.294);
   @media (max-width: $break-medium) {
-    font-size: 25px;
     width: 75vw;
     height: 40vh;
   }
@@ -24,6 +23,9 @@ $break-medium: 768px;
       transition: transform 2s cubic-bezier(0.25, 0.45, 0.45, 0.95);
       opacity: 0.5;
       overflow: hidden;
+      @media (max-width: $break-medium) {
+        color: #000000;
+      }
     }
 
     & .title {
@@ -46,7 +48,11 @@ $break-medium: 768px;
     visibility: hidden;
     position: absolute;
     @media (max-width: $break-medium) {
-      font-size: 25px;
+      font-size: 35px;
+      visibility: visible;
+      color: #ffffff;
+      background-color: black;
+      padding: 10px;
     }
   }
 }

@@ -31,14 +31,14 @@ class Billboard extends React.Component {
             <p className="name wear">WEAR.</p>
             <p className="name somtn">SOMTN.</p>
             <form
-              className="search-form"
+              className="billboard-search-form"
               onSubmit={this.handleSubmit}
               autoComplete="off"
             >
               <label>Search for clothes.</label>
-              <div className="search-bar">
+              <div className="search-bar-container">
                 <input
-                  className="billboard-search"
+                  className="billboard-search-input"
                   type="search"
                   name="searchBar"
                   value={this.state.searchValue}
@@ -46,7 +46,9 @@ class Billboard extends React.Component {
                   placeholder="Sneakers,jackets,hats..."
                   required
                 />
-                <CustomButton type="submit">Search</CustomButton>
+                <CustomButton searchButton type="submit">
+                  Search
+                </CustomButton>
               </div>
             </form>
             <p className="suggestion">or check out collections below.</p>

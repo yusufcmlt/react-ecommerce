@@ -1,7 +1,10 @@
+$break-medium: 768px;
 .collection-preview {
   display: flex;
   flex-direction: column;
   margin-bottom: 30px;
+  @media (max-width: $break-medium) {
+  }
 
   .title {
     font-size: 28px;
@@ -11,5 +14,10 @@
   .preview {
     display: flex;
     justify-content: space-between;
+    @media (max-width: $break-medium) {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      row-gap: 10px;
+    }
   }
 }

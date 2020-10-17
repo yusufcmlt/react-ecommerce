@@ -1,11 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
+$break-medium: 768px;
 .checkout-page {
-  width: 55%;
-  min-height: 90vh;
+  width: 85%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 50px auto 0;
+
+  @media (max-width: $break-medium) {
+    width: 100%;
+  }
 
   .checkout-header {
     width: 100%;
@@ -35,6 +39,10 @@
     align-items: center;
     font-size: 30px;
     font-family: "Ubuntu", sans-serif;
+    @media (max-width: $break-medium) {
+      font-size: 20px;
+      flex-direction: column;
+    }
 
     .test-warning {
       font-size: 15px;
@@ -42,6 +50,9 @@
       font-weight: bold;
       background-color: rgb(224, 221, 221);
       padding: 5px;
+      @media (max-width: $break-medium) {
+        transform: scale(0.8);
+      }
     }
     .payment {
       display: flex;

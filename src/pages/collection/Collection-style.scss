@@ -1,3 +1,5 @@
+$break-medium: 768px;
+
 .collection-page {
   display: flex;
   flex-direction: column;
@@ -5,11 +7,17 @@
   .title {
     font-size: 38px;
     margin: 10px auto 10px;
+    @media (max-width: $break-medium) {
+      font-size: 30px;
+    }
   }
 
   .items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    @media (max-width: $break-medium) {
+      grid-template-columns: 1fr 1fr;
+    }
 
     & .collection-item {
       margin-bottom: 30px;

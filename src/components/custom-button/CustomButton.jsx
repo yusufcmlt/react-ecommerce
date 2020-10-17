@@ -7,6 +7,7 @@ export default function CustomButton({
   isGoogleSignIn,
   inverted,
   addedCart,
+  searchButton,
   ...otherProps
 }) {
   return (
@@ -14,7 +15,8 @@ export default function CustomButton({
       className={`
       ${inverted ? "inverted" : ""} 
       ${isGoogleSignIn ? "google-sign-in" : ""}
-      ${addedCart ? "cart-added" : ""} 
+      ${addedCart ? "cart-added" : ""}
+      ${searchButton ? "search-button" : ""} 
       custom-button
       `}
       {...otherProps}

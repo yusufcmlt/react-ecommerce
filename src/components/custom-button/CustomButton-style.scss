@@ -1,3 +1,5 @@
+$break-medium: 768px;
+
 .custom-button {
   min-width: 165px;
   width: auto;
@@ -15,6 +17,7 @@
   cursor: pointer;
   display: flex;
   justify-content: center;
+  align-items: center;
 
   &:hover {
     background-color: white;
@@ -49,6 +52,13 @@
     }
     &:focus {
       outline: none;
+    }
+  }
+
+  &.search-button {
+    @media (max-width: $break-medium) {
+      height: 30px;
+      width: 40vw;
     }
   }
 }

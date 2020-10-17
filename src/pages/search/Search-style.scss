@@ -1,3 +1,4 @@
+$break-medium: 768px;
 .search-results-page {
   display: flex;
   flex-direction: column;
@@ -5,12 +6,17 @@
   .title {
     font-size: 38px;
     margin: 30px auto 50px;
+    @media (max-width: $break-medium) {
+      font-size: 20px;
+    }
   }
 
   .items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
+    @media (max-width: $break-medium) {
+      grid-template-columns: 1fr 1fr;
+    }
     & .collection-item {
       margin-bottom: 30px;
     }

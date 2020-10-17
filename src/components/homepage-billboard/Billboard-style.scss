@@ -34,7 +34,7 @@ $break-medium: 768px;
       .suggestion {
         font-size: 25px;
       }
-      .search-form {
+      .billboard-search-form {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -43,22 +43,33 @@ $break-medium: 768px;
           font-size: 25px;
           margin-bottom: 10px;
         }
-        .billboard-search {
-          width: 35vw;
+        .billboard-search-input {
+          width: 40vw;
           height: 50px;
           border: none;
           border-radius: 2px;
           text-indent: 50px;
           font-family: "Ubuntu", sans-serif;
           font-size: 20px;
+          @media (max-width: $break-medium) {
+            width: 166px;
+            flex-direction: column;
+            text-indent: 2px;
+            font-size: 15px;
+            height: 30px;
+            margin-bottom: 10px;
+          }
 
           &:focus {
             outline: 4px solid rgba(77, 76, 76, 0.253);
           }
         }
-        .search-bar {
+        .search-bar-container {
           display: flex;
           flex-direction: row;
+          @media (max-width: $break-medium) {
+            flex-direction: column;
+          }
         }
       }
     }
