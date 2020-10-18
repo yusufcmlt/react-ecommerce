@@ -15,13 +15,16 @@ import CheckOut from "./pages/checkout/Checkout";
 import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 import { setCurrentUser } from "./redux/user/user-actions";
 import { selectCurrentUser } from "./redux/user/user-selectors";
+//import { selectCollectionsForPreview } from "./redux/shop/shop-selectors";
 
 class App extends React.Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
+    //Getting shop collections array and set user functions from redux as a prop.
     const { setCurrentUser } = this.props;
     this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+      //If user signs in
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
         userRef.onSnapshot((snapShot) => {
@@ -31,6 +34,7 @@ class App extends React.Component {
           });
         });
       }
+      //No user or signing out => null data.
       setCurrentUser(userAuth);
     });
   }
