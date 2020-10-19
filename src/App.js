@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -17,13 +17,11 @@ import { setCurrentUser } from "./redux/user/user-actions";
 import { selectCurrentUser } from "./redux/user/user-selectors";
 //import { selectCollectionsForPreview } from "./redux/shop/shop-selectors";
 
-class App extends React.Component {
-  unsubscribeFromAuth = null;
+const App = ({ currentUser, setCurrentUser }) => {
+  useEffect(() => {
+    let unsubscribeFromAuth = null;
 
-  componentDidMount() {
-    //Getting shop collections array and set user functions from redux as a prop.
-    const { setCurrentUser } = this.props;
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
+    unsubscribeFromAuth = auth.onAuthStateChanged(async (userAuth) => {
       //If user signs in
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
@@ -37,55 +35,50 @@ class App extends React.Component {
       //No user or signing out => null data.
       setCurrentUser(userAuth);
     });
-  }
 
-  componentWillUnmount() {
     //Closing subscription
-    this.unsubscribeFromAuth();
-  }
+    return () => {
+      unsubscribeFromAuth();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
-  render() {
-    return (
-      <div>
-        <Header />
-        <Switch>
-          <Route
-            exact
-            path={process.env.PUBLIC_URL + "/"}
-            component={HomePage}
-          />
-          <Route path={process.env.PUBLIC_URL + "/shop"} component={ShopPage} />
-          <Route
-            exact
-            path={process.env.PUBLIC_URL + "/checkout"}
-            component={CheckOut}
-          />
-          <Route
-            exact
-            path={process.env.PUBLIC_URL + "/search/:searchQuery"}
-            component={Search}
-          />
-          <Route
-            exact
-            path={process.env.PUBLIC_URL + "/signin"}
-            render={() =>
-              this.props.currentUser ? (
-                <Redirect to={process.env.PUBLIC_URL + "/"} />
-              ) : (
-                <SignInOut />
-              )
-            }
-          />
-          <Route
-            exact
-            path={process.env.PUBLIC_URL + "/contact"}
-            component={HomePage}
-          />
-        </Switch>
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Header />
+      <Switch>
+        <Route exact path={process.env.PUBLIC_URL + "/"} component={HomePage} />
+        <Route path={process.env.PUBLIC_URL + "/shop"} component={ShopPage} />
+        <Route
+          exact
+          path={process.env.PUBLIC_URL + "/checkout"}
+          component={CheckOut}
+        />
+        <Route
+          exact
+          path={process.env.PUBLIC_URL + "/search/:searchQuery"}
+          component={Search}
+        />
+        <Route
+          exact
+          path={process.env.PUBLIC_URL + "/signin"}
+          render={() =>
+            currentUser ? (
+              <Redirect to={process.env.PUBLIC_URL + "/"} />
+            ) : (
+              <SignInOut />
+            )
+          }
+        />
+        <Route
+          exact
+          path={process.env.PUBLIC_URL + "/contact"}
+          component={HomePage}
+        />
+      </Switch>
+    </div>
+  );
+};
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
