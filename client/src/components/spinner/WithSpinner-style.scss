@@ -1,6 +1,13 @@
 @keyframes spin {
+  from {
+    background-image: url("../../assets/sport-wear.png");
+    width: 90px;
+    height: 90px;
+  }
   to {
-    -webkit-transform: rotate(360deg);
+    background-image: url("../../assets/sport-wear-colored.png");
+    width: 100px;
+    height: 100px;
   }
 }
 
@@ -10,14 +17,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   .spinner-container {
     display: inline-block;
-    width: 50px;
-    height: 50px;
-    border: 3px solid rgba(195, 195, 195, 0.6);
-    border-radius: 50%;
-    border-top-color: #431fa8;
-    animation: spin 1s ease-in-out infinite;
-    -webkit-animation: spin 1s ease-in-out infinite;
+    width: 100px;
+    height: 100px;
+    background-image: url("../../assets/sport-wear.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    animation: spin 0.8s ease-in-out infinite;
+    -webkit-animation: spin 0.8s ease-in-out infinite;
   }
 }
