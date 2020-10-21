@@ -3,7 +3,7 @@
   "name": "react-ecommerce",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:5000",
+  "proxy": "http://wearsomtn-backend.herokuapp.com/",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
