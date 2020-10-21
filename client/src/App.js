@@ -70,11 +70,7 @@ const App = ({ currentUser, setCurrentUser }) => {
             )
           }
         />
-        <Route
-          exact
-          path={process.env.PUBLIC_URL + "/contact"}
-          component={HomePage}
-        />
+        <Route render={() => <Redirect to={process.env.PUBLIC_URL + "/"} />} />
       </Switch>
     </div>
   );
