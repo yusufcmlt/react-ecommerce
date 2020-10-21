@@ -3,7 +3,9 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
 
-if (process.env.NODE_ENV !== "production") {
+const nodeEnv = process.env.NODE_ENV || "production";
+
+if (nodeEnv === "production") {
   require("dotenv").config();
 }
 
@@ -17,11 +19,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "client/build")));
-
+if (nodeEnv === "production") {
   app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+    res.redirect("https://pdouu.github.io/react-ecommerce");
   });
 }
 
@@ -36,7 +36,6 @@ app.post("/payment", (req, res) => {
     amount: req.body.amount,
     currency: "usd",
   };
-  console.log(body);
   stripe.charges.create(body, (stripeErr, stripeRes) => {
     if (stripeErr) {
       res.status(500).send({ error: stripeErr });
