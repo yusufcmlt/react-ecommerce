@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/react-ecommerce/static/css/main.38146b26.chunk.css",
-    "main.js": "/react-ecommerce/static/js/main.e0f83969.chunk.js",
-    "main.js.map": "/react-ecommerce/static/js/main.e0f83969.chunk.js.map",
+    "main.css": "/react-ecommerce/static/css/main.40b6d209.chunk.css",
+    "main.js": "/react-ecommerce/static/js/main.a7b3d64d.chunk.js",
+    "main.js.map": "/react-ecommerce/static/js/main.a7b3d64d.chunk.js.map",
     "runtime-main.js": "/react-ecommerce/static/js/runtime-main.ea96c490.js",
     "runtime-main.js.map": "/react-ecommerce/static/js/runtime-main.ea96c490.js.map",
-    "static/js/2.1812120b.chunk.js": "/react-ecommerce/static/js/2.1812120b.chunk.js",
-    "static/js/2.1812120b.chunk.js.map": "/react-ecommerce/static/js/2.1812120b.chunk.js.map",
+    "static/js/2.d1b0b44e.chunk.js": "/react-ecommerce/static/js/2.d1b0b44e.chunk.js",
+    "static/js/2.d1b0b44e.chunk.js.map": "/react-ecommerce/static/js/2.d1b0b44e.chunk.js.map",
     "index.html": "/react-ecommerce/index.html",
-    "precache-manifest.63174a4273217591d00248d17c9f4814.js": "/react-ecommerce/precache-manifest.63174a4273217591d00248d17c9f4814.js",
+    "precache-manifest.c8d1e8c97207b961793c6843c3514039.js": "/react-ecommerce/precache-manifest.c8d1e8c97207b961793c6843c3514039.js",
     "service-worker.js": "/react-ecommerce/service-worker.js",
-    "static/css/main.38146b26.chunk.css.map": "/react-ecommerce/static/css/main.38146b26.chunk.css.map",
-    "static/js/2.1812120b.chunk.js.LICENSE.txt": "/react-ecommerce/static/js/2.1812120b.chunk.js.LICENSE.txt",
+    "static/css/main.40b6d209.chunk.css.map": "/react-ecommerce/static/css/main.40b6d209.chunk.css.map",
+    "static/js/2.d1b0b44e.chunk.js.LICENSE.txt": "/react-ecommerce/static/js/2.d1b0b44e.chunk.js.LICENSE.txt",
     "static/media/shopping-bag.f536f3de.svg": "/react-ecommerce/static/media/shopping-bag.f536f3de.svg",
     "static/media/Header-style.scss": "/react-ecommerce/static/media/sport-wear.5f29d90c.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ea96c490.js",
-    "static/js/2.1812120b.chunk.js",
-    "static/css/main.38146b26.chunk.css",
-    "static/js/main.e0f83969.chunk.js"
+    "static/js/2.d1b0b44e.chunk.js",
+    "static/css/main.40b6d209.chunk.css",
+    "static/js/main.a7b3d64d.chunk.js"
   ]
 }
