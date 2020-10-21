@@ -11,7 +11,7 @@ const StripeButton = ({ price }) => {
   const onToken = (token) => {
     axios({
       //only works with exact url (not with path only)
-      url: "http://localhost:5000/payment",
+      url: "http://wearsomtn-backend.herokuapp.com/payment",
       method: "post",
       data: {
         amount: priceForStripe,
