@@ -1,7 +1,8 @@
+$break-medium: 768px;
 .checkout-item {
   width: 100%;
   display: flex;
-  min-height: 100px;
+  min-height: 50px;
   border-bottom: 1px solid darkgrey;
   padding: 15px 0;
   font-size: 20px;
@@ -9,17 +10,21 @@
 
   .image-container {
     width: 23%;
-    padding-right: 15px;
 
     img {
-      width: 100%;
-      height: 100%;
+      width: 100px;
+      @media (max-width: $break-medium) {
+        width: 50px;
+      }
     }
   }
   .name,
   .quantity,
   .price {
     width: 23%;
+    @media (max-width: $break-medium) {
+      font-size: 15px;
+    }
   }
 
   .quantity {
