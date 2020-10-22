@@ -17,7 +17,9 @@ $break-medium: 768px;
     @media (max-width: $break-medium) {
       transform: scale(0.8);
     }
-
+    &:focus {
+      outline: none;
+    }
     &:hover {
       color: rgb(65, 47, 85);
       transform: scale(1.03);

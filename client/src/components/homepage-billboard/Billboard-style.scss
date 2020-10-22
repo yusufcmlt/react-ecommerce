@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500&display=swap");
 $break-medium: 768px;
+$break-small: 320px;
 .billboard-container {
   width: 100%;
   color: white;
@@ -12,13 +13,10 @@ $break-medium: 768px;
     background-size: cover;
     border-radius: 10px;
     display: flex;
-
-    &:before {
-      background: rgb(0, 0, 0);
-      content: "";
-      position: absolute;
-      z-index: 2;
+    @media (max-width: $break-medium) {
+      border-radius: 0;
     }
+
     .search-container {
       width: 100%;
       height: 100%;
@@ -26,6 +24,9 @@ $break-medium: 768px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      @media (max-width: $break-small) {
+        transform: scale(0.8);
+      }
 
       .name {
         font-size: 55px;
@@ -48,11 +49,11 @@ $break-medium: 768px;
           height: 50px;
           border: none;
           border-radius: 2px;
-          text-indent: 50px;
+          text-indent: 30px;
           font-family: "Ubuntu", sans-serif;
           font-size: 20px;
           @media (max-width: $break-medium) {
-            width: 166px;
+            width: 200px;
             flex-direction: column;
             text-indent: 2px;
             font-size: 15px;

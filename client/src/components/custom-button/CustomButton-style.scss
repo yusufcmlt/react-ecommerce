@@ -59,9 +59,11 @@ $break-medium: 768px;
   }
 
   &.search-button {
+    margin-left: 20px;
     @media (max-width: $break-medium) {
+      margin-left: 0;
       height: 30px;
-      width: 40vw;
+      width: 200px;
     }
   }
 }
