@@ -15,6 +15,7 @@ import CheckOut from "./pages/checkout/Checkout";
 import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 import { setCurrentUser } from "./redux/user/user-actions";
 import { selectCurrentUser } from "./redux/user/user-selectors";
+import { Footer } from "./components/footer/Footer";
 //import { selectCollectionsForPreview } from "./redux/shop/shop-selectors";
 
 const App = ({ currentUser, setCurrentUser }) => {
@@ -72,6 +73,7 @@ const App = ({ currentUser, setCurrentUser }) => {
         />
         <Route render={() => <Redirect to={process.env.PUBLIC_URL + "/"} />} />
       </Switch>
+      <Footer />
     </div>
   );
 };

@@ -1,0 +1,77 @@
+$break-medium: 768px;
+.footer-container {
+  height: 200px;
+  background-color: rgba(0, 0, 0, 0.85);
+  margin-top: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  .links-container {
+    width: 25vw;
+    height: 180px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    @media (max-width: $break-medium) {
+      flex-direction: column;
+    }
+
+    .footer-link {
+      width: 50px;
+      height: 50px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      filter: invert(100%);
+      cursor: pointer;
+      @media (max-width: $break-medium) {
+        width: 35px;
+        height: 35px;
+      }
+      &:hover {
+        filter: invert(0%);
+      }
+    }
+    .github {
+      background-image: url("https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png");
+    }
+    .linkedin {
+      background-image: url("https://cdn.iconscout.com/icon/free/png-256/linkedin-36-151077.png");
+    }
+    .twitter {
+      background-image: url("https://cdn.onlinewebfonts.com/svg/img_152340.png");
+    }
+    .youtube {
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/YouTube_social_dark_circle_%282017%29.svg/300px-YouTube_social_dark_circle_%282017%29.svg.png");
+    }
+  }
+  .logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    font-size: 15px;
+    font-weight: 700;
+    transition-duration: 0.5s;
+    background-color: rgb(233, 232, 232);
+    @media (max-width: $break-medium) {
+      width: 150px;
+    }
+
+    .logo {
+      width: 70px;
+      height: 70px;
+      background-image: url("../../assets/sport-wear-colored.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      @media (max-width: $break-medium) {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
+}
