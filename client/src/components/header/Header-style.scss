@@ -1,11 +1,14 @@
 $break-medium: 768px;
 .header {
-  height: 140px;
+  height: 150px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-
+  padding: 0 50px;
   border-bottom: 1px solid gray;
+  @media (max-width: $break-medium) {
+    padding: 0px;
+  }
 
   .logo-container {
     padding: 25px;
@@ -47,26 +50,32 @@ $break-medium: 768px;
     align-items: center;
     justify-content: flex-end;
     font-size: 25px;
+
     @media (max-width: $break-medium) {
       flex-direction: column;
       justify-content: center;
-      align-items: flex-end;
+      align-items: center;
     }
 
     .option {
-      padding: 10px 45px;
+      width: 150px;
+      padding: 10px;
+      text-align: center;
       cursor: pointer;
-      transition-duration: 1s;
+      transition-duration: 0.5s;
+      background-color: rgb(245, 245, 245);
+      margin: 0 5px;
       @media (max-width: $break-medium) {
+        width: 100px;
         flex-direction: column;
         font-size: 15px;
         padding: 5px 0;
-        text-decoration: underline;
+        background-color: rgb(245, 245, 245);
       }
     }
     .option:hover {
-      color: rgb(58, 85, 207);
-      text-decoration: underline;
+      color: rgb(98, 58, 207);
+      background-color: rgb(221, 221, 221);
     }
   }
 }

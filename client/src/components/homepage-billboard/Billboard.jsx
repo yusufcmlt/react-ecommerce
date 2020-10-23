@@ -35,7 +35,7 @@ class Billboard extends React.Component {
               onSubmit={this.handleSubmit}
               autoComplete="off"
             >
-              <label>Search for clothes.</label>
+              <label className="suggestion">Search for clothes.</label>
               <div className="search-bar-container">
                 <input
                   className="billboard-search-input"

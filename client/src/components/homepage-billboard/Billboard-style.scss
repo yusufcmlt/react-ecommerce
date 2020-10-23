@@ -5,15 +5,19 @@ $break-small: 320px;
   width: 100%;
   color: white;
   text-align: center;
+  display: flex;
+  justify-content: center;
 
   .image-container {
-    height: 50vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    width: 95%;
+    height: 60vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.2)),
       url("https://images.unsplash.com/photo-1544441893-675973e31985?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
     background-size: cover;
     border-radius: 10px;
     display: flex;
     @media (max-width: $break-medium) {
+      width: 100%;
       border-radius: 0;
     }
 
@@ -31,9 +35,15 @@ $break-small: 320px;
       .name {
         font-size: 55px;
         margin: 0;
+        @media (max-width: $break-medium) {
+          font-size: 45px;
+        }
       }
       .suggestion {
         font-size: 25px;
+        @media (max-width: $break-medium) {
+          font-size: 20px;
+        }
       }
       .billboard-search-form {
         display: flex;
@@ -43,6 +53,12 @@ $break-small: 320px;
         label {
           font-size: 25px;
           margin-bottom: 10px;
+        }
+        label {
+          font-size: 25px;
+          @media (max-width: $break-medium) {
+            font-size: 20px;
+          }
         }
         .billboard-search-input {
           width: 40vw;
