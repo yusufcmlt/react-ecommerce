@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/react-ecommerce/static/css/main.40b6d209.chunk.css",
-    "main.js": "/react-ecommerce/static/js/main.6c637ba7.chunk.js",
-    "main.js.map": "/react-ecommerce/static/js/main.6c637ba7.chunk.js.map",
+    "main.css": "/react-ecommerce/static/css/main.81f11426.chunk.css",
+    "main.js": "/react-ecommerce/static/js/main.98c9b255.chunk.js",
+    "main.js.map": "/react-ecommerce/static/js/main.98c9b255.chunk.js.map",
     "runtime-main.js": "/react-ecommerce/static/js/runtime-main.ea96c490.js",
     "runtime-main.js.map": "/react-ecommerce/static/js/runtime-main.ea96c490.js.map",
-    "static/js/2.d1b0b44e.chunk.js": "/react-ecommerce/static/js/2.d1b0b44e.chunk.js",
-    "static/js/2.d1b0b44e.chunk.js.map": "/react-ecommerce/static/js/2.d1b0b44e.chunk.js.map",
+    "static/js/2.70b88676.chunk.js": "/react-ecommerce/static/js/2.70b88676.chunk.js",
+    "static/js/2.70b88676.chunk.js.map": "/react-ecommerce/static/js/2.70b88676.chunk.js.map",
     "index.html": "/react-ecommerce/index.html",
-    "precache-manifest.4970bf5693bf6d7bb6e6cb891d9db73c.js": "/react-ecommerce/precache-manifest.4970bf5693bf6d7bb6e6cb891d9db73c.js",
+    "precache-manifest.e7527c6147b2ec007e3913922e6fa2ee.js": "/react-ecommerce/precache-manifest.e7527c6147b2ec007e3913922e6fa2ee.js",
     "service-worker.js": "/react-ecommerce/service-worker.js",
-    "static/css/main.40b6d209.chunk.css.map": "/react-ecommerce/static/css/main.40b6d209.chunk.css.map",
-    "static/js/2.d1b0b44e.chunk.js.LICENSE.txt": "/react-ecommerce/static/js/2.d1b0b44e.chunk.js.LICENSE.txt",
+    "static/css/main.81f11426.chunk.css.map": "/react-ecommerce/static/css/main.81f11426.chunk.css.map",
+    "static/js/2.70b88676.chunk.js.LICENSE.txt": "/react-ecommerce/static/js/2.70b88676.chunk.js.LICENSE.txt",
     "static/media/shopping-bag.f536f3de.svg": "/react-ecommerce/static/media/shopping-bag.f536f3de.svg",
+    "static/media/Footer-style.scss": "/react-ecommerce/static/media/sport-wear-colored.c1047b0c.png",
     "static/media/Header-style.scss": "/react-ecommerce/static/media/sport-wear.5f29d90c.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ea96c490.js",
-    "static/js/2.d1b0b44e.chunk.js",
-    "static/css/main.40b6d209.chunk.css",
-    "static/js/main.6c637ba7.chunk.js"
+    "static/js/2.70b88676.chunk.js",
+    "static/css/main.81f11426.chunk.css",
+    "static/js/main.98c9b255.chunk.js"
   ]
 }
