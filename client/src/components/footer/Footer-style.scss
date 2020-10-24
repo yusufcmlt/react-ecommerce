@@ -6,14 +6,19 @@ $break-medium: 768px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  @media (max-width: $break-medium) {
+    height: 120px;
+  }
+
   .links-container {
     width: 25vw;
-    height: 180px;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     @media (max-width: $break-medium) {
-      flex-direction: column;
+      flex-direction: row;
+      flex-wrap: wrap;
     }
 
     .footer-link {

@@ -4,19 +4,20 @@ $break-medium: 768px;
   display: flex;
   flex-direction: column;
 
-  @media (max-width: $break-medium) {
-    width: 100%;
-  }
-
   .title {
     margin: 10px 0;
   }
   .buttons {
     display: flex;
-    justify-content: center;
+
     flex-direction: column;
+
     & :first-child {
       margin-bottom: 10px;
     }
+  }
+
+  @media (max-width: $break-medium) {
+    width: 85%;
   }
 }

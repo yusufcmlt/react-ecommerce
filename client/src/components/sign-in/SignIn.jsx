@@ -31,9 +31,9 @@ const SignIn = () => {
 
   return (
     <div className="sign-in">
-      <h2>I Already Have an Account</h2>
+      <h2 className="title">I Already Have an Account</h2>
       <span>Sign in with your email and password</span>
-      <form onSubmit={handleSubmit}>
+      <form className="sign-in-form" onSubmit={handleSubmit}>
         <FormInput
           name="email"
           type="email"

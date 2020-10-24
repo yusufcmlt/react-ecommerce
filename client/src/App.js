@@ -45,7 +45,7 @@ const App = ({ currentUser, setCurrentUser }) => {
   }, []);
 
   return (
-    <div>
+    <div className="app-container">
       <Header />
       <Switch>
         <Route exact path={process.env.PUBLIC_URL + "/"} component={HomePage} />

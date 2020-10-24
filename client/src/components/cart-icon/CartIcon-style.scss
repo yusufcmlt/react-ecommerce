@@ -1,6 +1,6 @@
 $break-medium: 768px;
 .cart-icon {
-  width: 45px;
+  width: 150px;
   height: 45px;
   position: relative;
   display: flex;
@@ -8,6 +8,10 @@ $break-medium: 768px;
   justify-content: center;
   cursor: pointer;
   bottom: 2px;
+  @media (max-width: $break-medium) {
+    transform: scale(0.8);
+    width: 100px;
+  }
 
   .shopping-icon {
     width: 38px;

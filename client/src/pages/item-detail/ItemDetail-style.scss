@@ -39,8 +39,8 @@ $break-medium: 768px;
     margin-left: 50px;
     @media (max-width: $break-medium) {
       border: none;
-      width: 100%;
-      padding: 0;
+
+      padding: 0 30px;
       margin: 10px 0 0 0;
       font-size: 10px;
       border-top: 1px solid gray;
@@ -50,6 +50,9 @@ $break-medium: 768px;
       font-size: 35px;
       text-align: right;
       font-weight: bold;
+      @media (max-width: $break-medium) {
+        text-align: center;
+      }
     }
     .item-description {
       font-size: 20px;
