@@ -2,7 +2,7 @@ $break-medium: 768px;
 .footer-container {
   height: 200px;
   background-color: rgba(0, 0, 0, 0.85);
-  margin-top: 100px;
+
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -38,16 +38,16 @@ $break-medium: 768px;
       }
     }
     .github {
-      background-image: url("https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png");
+      background-image: url("../../assets/github-logo.webp");
     }
     .linkedin {
-      background-image: url("https://cdn.iconscout.com/icon/free/png-256/linkedin-36-151077.png");
+      background-image: url("../../assets/linkedin-logo.webp");
     }
     .twitter {
-      background-image: url("https://cdn.onlinewebfonts.com/svg/img_152340.png");
+      background-image: url("../../assets/twitter-logo.png");
     }
     .youtube {
-      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/YouTube_social_dark_circle_%282017%29.svg/300px-YouTube_social_dark_circle_%282017%29.svg.png");
+      background-image: url("../../assets/youtube-logo.png");
     }
   }
   .logo-container {

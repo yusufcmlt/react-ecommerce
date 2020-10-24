@@ -16,6 +16,7 @@ import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 import { setCurrentUser } from "./redux/user/user-actions";
 import { selectCurrentUser } from "./redux/user/user-selectors";
 import { Footer } from "./components/footer/Footer";
+import { Admin } from "./pages/admin/Admin";
 //import { selectCollectionsForPreview } from "./redux/shop/shop-selectors";
 
 const App = ({ currentUser, setCurrentUser }) => {
@@ -26,6 +27,7 @@ const App = ({ currentUser, setCurrentUser }) => {
       //If user signs in
       if (userAuth) {
         const userRef = await createUserProfileDocument(userAuth);
+
         userRef.onSnapshot((snapShot) => {
           setCurrentUser({
             id: snapShot.id,
@@ -33,6 +35,7 @@ const App = ({ currentUser, setCurrentUser }) => {
           });
         });
       }
+
       //No user or signing out => null data.
       setCurrentUser(userAuth);
     });
@@ -63,14 +66,15 @@ const App = ({ currentUser, setCurrentUser }) => {
         <Route
           exact
           path={process.env.PUBLIC_URL + "/signin"}
-          render={() =>
-            currentUser ? (
+          render={() => {
+            return currentUser ? (
               <Redirect to={process.env.PUBLIC_URL + "/"} />
             ) : (
               <SignInOut />
-            )
-          }
+            );
+          }}
         />
+        <Route path={process.env.PUBLIC_URL + "/admin"} component={Admin} />
         <Route render={() => <Redirect to={process.env.PUBLIC_URL + "/"} />} />
       </Switch>
       <Footer />

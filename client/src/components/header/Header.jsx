@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase-utils";
 import { connect } from "react-redux";
@@ -14,6 +14,14 @@ import "./Header-style.scss";
 //import { ReactComponent as Logo } from "../../assets/sport-wear.svg";
 
 const Header = ({ currentUser, hidden }) => {
+  const [isUserAdmin, setUserAdmin] = useState(false);
+
+  useEffect(() => {
+    currentUser && currentUser.isAdmin
+      ? setUserAdmin(true)
+      : setUserAdmin(false);
+  }, [currentUser]);
+
   return (
     <div className="header">
       <Link className="logo-container" to={process.env.PUBLIC_URL + "/"}>
@@ -21,9 +29,19 @@ const Header = ({ currentUser, hidden }) => {
         WEARSOMTN
       </Link>
       <div className="options">
+        {isUserAdmin ? (
+          <Link
+            className="option is-admin"
+            to={process.env.PUBLIC_URL + "/admin"}
+          >
+            ADMIN
+          </Link>
+        ) : null}
+
         <Link className="option" to={process.env.PUBLIC_URL + "/shop"}>
           SHOP
         </Link>
+
         <a
           className="option"
           target="_blank"
@@ -32,6 +50,7 @@ const Header = ({ currentUser, hidden }) => {
         >
           CONTACT
         </a>
+
         {currentUser ? (
           <div className="option" onClick={() => auth.signOut()}>
             SIGN OUT

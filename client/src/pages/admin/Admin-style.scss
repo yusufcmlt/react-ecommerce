@@ -1,0 +1,30 @@
+.admin-container {
+  display: flex;
+  flex-direction: column;
+  height: 65vh;
+  padding: 0 50px;
+  background-color: rgba(232, 241, 248, 0.966);
+
+  .admin-content-container {
+    display: flex;
+
+    height: 100%;
+
+    .admin-sidebar {
+      width: 250px;
+      display: flex;
+      flex-direction: column;
+      background-color: rgba(0, 0, 0, 0.85);
+
+      .title {
+        color: white;
+      }
+    }
+    .admin-content-detail {
+      width: 100%;
+      .title {
+        margin: 0 0 50px 0;
+      }
+    }
+  }
+}
