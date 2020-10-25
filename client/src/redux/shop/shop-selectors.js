@@ -60,3 +60,23 @@ export const selectIsCollectionLoaded = createSelector(
   [selectShop],
   (shop) => !!shop.collections
 );
+export const selectCollectionKeys = createSelector(
+  [selectCollections],
+  (collections) => (collections ? Object.keys(collections) : [])
+);
+export const selectCollectionCategoryCount = createSelector(
+  [selectCollections],
+  (collections) => (collections ? Object.keys(collections).length : 0)
+);
+
+export const selectCollectionItemsCount = createSelector(
+  [selectCollections],
+  (collections) =>
+    collections
+      ? Object.keys(collections).reduce(
+          (totalItem, collection) =>
+            totalItem + collections[collection].items.length,
+          0
+        )
+      : 0
+);

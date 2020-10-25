@@ -1,10 +1,10 @@
 import React from "react";
 
-export default function AdminTotal({ itemCount, name }) {
+export default function AdminTotal({ count, name }) {
   return (
     <div className="dashboard-total">
       <span className="name">{name}</span>
-      <span className="count">{itemCount}</span>
+      <span className="count">{count}</span>
     </div>
   );
 }

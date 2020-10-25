@@ -8,18 +8,24 @@
   align-items: center;
 
   .dashboard-add-item-form {
+    font-family: "Rubik", sans-serif;
     display: flex;
     flex-direction: column;
     width: 380px;
     label {
       font-size: 20px;
+      font-weight: bold;
     }
 
     .item-add-input {
-      margin: 30px 0;
-      height: 30px;
+      font-family: "Rubik", sans-serif;
+      margin: 20px 0;
+      height: 40px;
       border: none;
       border-bottom: 1px solid gray;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.472);
+      text-indent: 10px;
     }
   }
 }

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import CustomButton from "../../components/custom-button/CustomButton";
 import AdminAdd from "./admin-add/AdminAdd";
-import { AdminHome } from "./admin-home/AdminHome";
+import AdminHome from "./admin-home/AdminHome";
 import AdminRemove from "./admin-remove/AdminRemove";
 import "./Admin-style.scss";
 

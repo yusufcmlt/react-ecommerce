@@ -1,9 +1,12 @@
 import React, { useState } from "react";
+import { connect } from "react-redux";
 import CustomButton from "../../../components/custom-button/CustomButton";
+import { selectCollectionKeys } from "../../../redux/shop/shop-selectors";
+import { Admin } from "../Admin";
 
 import "./AdminAdd-style.scss";
 
-const AdminAdd = () => {
+const AdminAdd = ({ itemCategories }) => {
   const [itemSpecs, setItemSpecs] = useState({
     category: "",
     name: "",
@@ -28,11 +31,9 @@ const AdminAdd = () => {
           name="category"
           onChange={handleChange}
         >
-          <option>Hats</option>
-          <option>Jackets</option>
-          <option>Sneakers</option>
-          <option>Womens</option>
-          <option>Mens</option>
+          {itemCategories.map((category) => (
+            <option>{category.toUpperCase()}</option>
+          ))}
         </select>
         <label>Item Name</label>
         <input
@@ -60,4 +61,8 @@ const AdminAdd = () => {
     </div>
   );
 };
-export default AdminAdd;
+
+const mapStateToProps = (state) => ({
+  itemCategories: selectCollectionKeys(state),
+});
+export default connect(mapStateToProps)(AdminAdd);
