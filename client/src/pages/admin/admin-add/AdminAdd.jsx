@@ -8,7 +8,7 @@ import { selectCollectionKeys } from "../../../redux/shop/shop-selectors";
 
 import "./AdminAdd-style.scss";
 
-const AdminAdd = ({ itemCategories }) => {
+const AdminAdd = ({ itemCategories, fetchFunc }) => {
   const [itemSpecs, setItemSpecs] = useState({
     category: "",
     name: "",
@@ -37,6 +37,7 @@ const AdminAdd = ({ itemCategories }) => {
     try {
       await updateItemToCollection(category, { name, imageUrl, price, id });
       alert("Item Added");
+      fetchFunc();
       setItemSpecs({
         ...itemSpecs,
         name: "",
