@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
+import { v4 as uuidv4 } from "uuid";
+
 import CustomButton from "../../../components/custom-button/CustomButton";
+import { updateItemToCollection } from "../../../firebase/firebase-utils";
 import { selectCollectionKeys } from "../../../redux/shop/shop-selectors";
-import { Admin } from "../Admin";
 
 import "./AdminAdd-style.scss";
 
@@ -12,7 +14,18 @@ const AdminAdd = ({ itemCategories }) => {
     name: "",
     imageUrl: "",
     price: "",
+    id: "",
   });
+
+  //Setting first select option as state for initial state
+  useEffect(() => {
+    if (itemCategories)
+      setItemSpecs({
+        ...itemSpecs,
+        id: uuidv4().slice(0, 6),
+        category: itemCategories[0] ? itemCategories[0].collectionKey : [],
+      });
+  }, [itemCategories]);
 
   const handleChange = (event) => {
     const { value, name } = event.target;
@@ -20,7 +33,22 @@ const AdminAdd = ({ itemCategories }) => {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
+    const { category, name, imageUrl, price, id } = itemSpecs;
+    try {
+      await updateItemToCollection(category, { name, imageUrl, price, id });
+      alert("Item Added");
+      setItemSpecs({
+        ...itemSpecs,
+        name: "",
+        imageUrl: "",
+        price: "",
+        id: "",
+      });
+    } catch (error) {
+      console.log(error);
+    }
   };
+
   return (
     <div className="dashboard-add-item-container">
       <h1 className="title">ADD NEW ITEM</h1>
@@ -31,8 +59,14 @@ const AdminAdd = ({ itemCategories }) => {
           name="category"
           onChange={handleChange}
         >
-          {itemCategories.map((category) => (
-            <option>{category.toUpperCase()}</option>
+          {itemCategories.map((category, index) => (
+            <option
+              key={category.collectionKey}
+              name="category"
+              value={category.collectionKey}
+            >
+              {category.collectionName.toUpperCase()}
+            </option>
           ))}
         </select>
         <label>Item Name</label>
@@ -40,21 +74,28 @@ const AdminAdd = ({ itemCategories }) => {
           className="item-add-input"
           name="name"
           type="text"
+          value={itemSpecs.name}
           onChange={handleChange}
+          required
         />
         <label>Item Price</label>
         <input
           className="item-add-input"
           name="price"
-          type="text"
+          type="number"
+          min="0"
+          value={itemSpecs.price}
           onChange={handleChange}
+          required
         />
         <label>Item Image Url</label>
         <input
           className="item-add-input"
           name="imageUrl"
-          type="text"
+          type="url"
+          value={itemSpecs.imageUrl}
           onChange={handleChange}
+          required
         />
         <CustomButton>ADD NEW ITEM</CustomButton>
       </form>
@@ -65,4 +106,5 @@ const AdminAdd = ({ itemCategories }) => {
 const mapStateToProps = (state) => ({
   itemCategories: selectCollectionKeys(state),
 });
+
 export default connect(mapStateToProps)(AdminAdd);
