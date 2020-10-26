@@ -86,3 +86,20 @@ export const selectCollectionItemsCount = createSelector(
         )
       : 0
 );
+
+export const selectAdminItems = createSelector(
+  [selectCollections],
+  (collections) => {
+    return collections
+      ? Object.keys(collections).reduce((allItems, collection) => {
+          return [
+            ...allItems,
+            ...collections[collection].items.map((item) => ({
+              ...item,
+              category: { name: collection, dbid: collections[collection].id },
+            })),
+          ];
+        }, [])
+      : [];
+  }
+);
