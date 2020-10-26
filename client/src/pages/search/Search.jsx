@@ -17,15 +17,14 @@ class Search extends React.Component {
   }
 
   render() {
-    const { match, resultItems, isCollectionFetching } = this.props;
-    console.log(isCollectionFetching);
+    const { match, resultItems, isCollectionLoaded } = this.props;
 
     return (
       <div className="search-results-page">
         <h2 className="title">
           {resultItems.length ? (
             `SEARCH RESULTS FOR:"${match.params.searchQuery}"`
-          ) : !isCollectionFetching ? (
+          ) : !isCollectionLoaded ? (
             <p>Searching...</p>
           ) : (
             <p>CAN'T FIND ANY ITEMS WITH "{match.params.searchQuery}"</p>
