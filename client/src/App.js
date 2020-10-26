@@ -16,8 +16,7 @@ import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 import { setCurrentUser } from "./redux/user/user-actions";
 import { selectCurrentUser } from "./redux/user/user-selectors";
 import { Footer } from "./components/footer/Footer";
-import { Admin } from "./pages/admin/Admin";
-//import { selectCollectionsForPreview } from "./redux/shop/shop-selectors";
+import Admin from "./pages/admin/Admin";
 
 const App = ({ currentUser, setCurrentUser }) => {
   useEffect(() => {
