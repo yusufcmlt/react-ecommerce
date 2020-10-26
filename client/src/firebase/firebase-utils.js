@@ -37,6 +37,27 @@ export const createUserProfileDocument = async (userAuth, additionalData) => {
   return userRef;
 };
 
+export const updateItemToCollection = async (
+  collectionKey,
+  collectionData,
+  whatToDo = "add"
+) => {
+  const categoryRef = firestore.collection(`collections`).doc(collectionKey);
+  try {
+    if (whatToDo === "add") {
+      await categoryRef.update({
+        items: firebase.firestore.FieldValue.arrayUnion(collectionData),
+      });
+    } else {
+      await categoryRef.update({
+        items: firebase.firestore.FieldValue.arrayRemove(collectionData),
+      });
+    }
+  } catch (error) {
+    console.log("Error adding item: ", error.message);
+  }
+};
+
 //Adding shop items to firestore
 //Used for one time
 export const addCollectionAndDocs = async (collectionKey, objectsToAdd) => {
@@ -70,6 +91,7 @@ export const collectionsSnapshotToMap = (collections) => {
     return acc;
   }, {});
 };
+
 firebase.initializeApp(config);
 
 export const auth = firebase.auth();
