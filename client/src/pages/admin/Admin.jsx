@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { connect } from "react-redux";
 import CustomButton from "../../components/custom-button/CustomButton";
 import AdminAdd from "./admin-add/AdminAdd";
 import AdminHome from "./admin-home/AdminHome";
 import AdminRemove from "./admin-remove/AdminRemove";
 import "./Admin-style.scss";
 
-export const Admin = () => {
+import { fetchCollectionsStartAsync } from "../../redux/shop/shop-actions";
+const Admin = ({ fetchCollectionsStartAsync }) => {
   const [adminSection, setAdminSection] = useState("home");
+
+  useEffect(() => {
+    fetchCollectionsStartAsync();
+  }, []);
 
   return (
     <div className="admin-container">
@@ -54,3 +60,11 @@ export const Admin = () => {
     </div>
   );
 };
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync()),
+  };
+};
+
+export default connect(null, mapDispatchToProps)(Admin);
