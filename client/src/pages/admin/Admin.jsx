@@ -46,14 +46,22 @@ const Admin = ({ fetchCollectionsStartAsync }) => {
           >
             REMOVE ITEM
           </CustomButton>
+          <CustomButton
+            onClick={() => {
+              fetchCollectionsStartAsync();
+            }}
+            adminButton
+          >
+            REFRESH ITEMS LIST
+          </CustomButton>
         </div>
         <div className="admin-content-detail">
           {adminSection === "home" ? (
             <AdminHome />
           ) : adminSection === "add" ? (
-            <AdminAdd />
+            <AdminAdd fetchFunc={fetchCollectionsStartAsync} />
           ) : (
-            <AdminRemove />
+            <AdminRemove fetchFunc={fetchCollectionsStartAsync} />
           )}
         </div>
       </div>
