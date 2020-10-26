@@ -10,6 +10,7 @@ export default function CustomButton({
   searchButton,
   adminButton,
   selectedAdmin,
+  pageButton,
   ...otherProps
 }) {
   return (
@@ -21,6 +22,7 @@ export default function CustomButton({
       ${searchButton ? "search-button" : ""}
       ${adminButton ? "admin-button" : ""}  
       ${selectedAdmin ? "selected-admin-button" : ""}
+      ${pageButton ? "page-number_button" : ""}
       custom-button
       `}
       {...otherProps}
