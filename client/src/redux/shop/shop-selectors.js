@@ -20,9 +20,9 @@ export const selectCollection = (collectionUrlParam) =>
 
 export const selectItemDetail = (collectionUrlParam, itemUrlParam) =>
   createSelector([selectCollections], (collections) =>
-    collections[collectionUrlParam].items.find(
-      (item) => item.id === Number(itemUrlParam)
-    )
+    collections[collectionUrlParam].items.find((item) => {
+      return item.id == itemUrlParam;
+    })
   );
 
 export const selectSearchResultItems = (searchQuery) =>
@@ -62,7 +62,13 @@ export const selectIsCollectionLoaded = createSelector(
 );
 export const selectCollectionKeys = createSelector(
   [selectCollections],
-  (collections) => (collections ? Object.keys(collections) : [])
+  (collections) =>
+    collections
+      ? Object.keys(collections).map((collection) => ({
+          collectionName: collection,
+          collectionKey: collections[collection].id,
+        }))
+      : []
 );
 export const selectCollectionCategoryCount = createSelector(
   [selectCollections],
