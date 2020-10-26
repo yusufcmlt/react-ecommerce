@@ -2,20 +2,19 @@
 .admin-container {
   display: flex;
   flex-direction: column;
-  height: 65vh;
-  padding: 0 50px;
+
   background-color: rgba(235, 240, 243, 0.966);
+  flex-grow: 1;
 
   .admin-content-container {
     display: flex;
-
-    height: 100%;
+    flex-grow: 1;
 
     .admin-sidebar {
       width: 250px;
       display: flex;
       flex-direction: column;
-      background-color: rgba(0, 0, 0, 0.85);
+      background-color: rgb(34, 33, 33);
 
       .title {
         color: white;

@@ -1,7 +1,6 @@
 $break-medium: 768px;
 
 .custom-button {
-  min-width: 165px;
   width: auto;
   height: 50px;
   letter-spacing: 0.5px;
@@ -68,8 +67,12 @@ $break-medium: 768px;
     }
     &:active {
       background-color: white;
+
       color: rgb(29, 29, 29);
       border: 1px solid rgb(29, 29, 29);
+    }
+    &:focus {
+      outline: none;
     }
   }
   &.selected-admin-button {
@@ -77,8 +80,13 @@ $break-medium: 768px;
     background-color: rgb(51, 51, 51);
   }
 
+  &.page-number_button {
+    width: 10px;
+  }
   &.search-button {
     margin-left: 20px;
+    background-color: white;
+    color: black;
     @media (max-width: $break-medium) {
       margin-left: 0;
       height: 30px;

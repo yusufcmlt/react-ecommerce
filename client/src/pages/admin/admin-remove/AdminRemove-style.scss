@@ -1,22 +1,38 @@
+$break-medium: 768px;
 .dashboard-item-remove-container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  padding: 50px 0;
   label {
     font-size: 20px;
+    font-weight: bold;
   }
-  .remove-item-filter-input {
-    margin: 20px 0;
-    width: 380px;
-    height: 40px;
-    border: none;
-    border-bottom: 1px solid gray;
-    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.24);
-    text-indent: 10px;
+  .filters-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-evenly;
+
+    .filter {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .remove-item-filter-input {
+      margin: 20px 0;
+      width: 280px;
+      height: 40px;
+      border: none;
+      border-bottom: 1px solid gray;
+      box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.24);
+      text-indent: 10px;
+    }
   }
   .item-remove-header {
     font-family: "Rubik", sans-serif;
-    width: 80%;
+    font-weight: bold;
+    width: 85%;
     padding: 10px 0;
     display: flex;
     justify-content: space-between;
@@ -24,11 +40,46 @@
 
     .header-block {
       text-transform: capitalize;
-      width: 23%;
+      width: 15%;
+      user-select: none;
+    }
+  }
 
-      &:last-child {
-        width: 8%;
+  .admin-item {
+    width: 85%;
+    display: flex;
+    min-height: 10px;
+    border-bottom: 1px solid darkgrey;
+    padding: 10px 0;
+    font-size: 20px;
+    justify-content: space-between;
+    align-items: center;
+
+    .item-spec {
+      width: 15%;
+      @media (max-width: $break-medium) {
+        font-size: 15px;
+      }
+      img {
+        width: 55px;
+        @media (max-width: $break-medium) {
+          width: 50px;
+        }
+      }
+      &.remove {
+        cursor: pointer;
+        user-select: none;
+
+        &:hover {
+          color: red;
+        }
       }
     }
+  }
+  .buttons-container {
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    margin-top: 10px;
   }
 }
