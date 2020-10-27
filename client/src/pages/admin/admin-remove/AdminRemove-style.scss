@@ -39,9 +39,14 @@ $break-medium: 768px;
     border-bottom: 1px solid gray;
 
     .header-block {
-      text-transform: capitalize;
       width: 15%;
       user-select: none;
+
+      .sort-icon {
+        display: inline-block;
+        transform: rotate(90deg);
+        width: 15%;
+      }
     }
   }
 
@@ -54,9 +59,13 @@ $break-medium: 768px;
     font-size: 20px;
     justify-content: space-between;
     align-items: center;
-
+    &:hover {
+      cursor: pointer;
+      background-color: rgb(218, 216, 216);
+    }
     .item-spec {
       width: 15%;
+
       @media (max-width: $break-medium) {
         font-size: 15px;
       }
@@ -78,8 +87,8 @@ $break-medium: 768px;
   }
   .buttons-container {
     display: flex;
-    width: 20%;
-    justify-content: space-between;
+    width: 10%;
+    justify-content: center;
     margin-top: 10px;
   }
 }

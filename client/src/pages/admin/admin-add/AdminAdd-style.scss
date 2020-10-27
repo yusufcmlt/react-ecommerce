@@ -1,13 +1,15 @@
 .dashboard-add-item-container {
   width: 100%;
   height: 100%;
-
   display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 
+  .title {
+    width: 100%;
+  }
   .dashboard-add-item-form {
+    height: 100%;
     font-family: "Rubik", sans-serif;
     display: flex;
     flex-direction: column;
@@ -26,6 +28,28 @@
       border-radius: 5px;
       box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.472);
       text-indent: 10px;
+    }
+  }
+  .dashboard-image-container {
+    margin: 0 50px;
+    height: 75%;
+    width: 380px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.472);
+    background-size: cover;
+
+    .dashboard-image-preview {
+      background-color: rgba(255, 255, 255, 0.055);
+    }
+
+    &:hover {
+      .dashboard-image-preview {
+        display: none;
+      }
     }
   }
 }
