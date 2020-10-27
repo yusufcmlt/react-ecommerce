@@ -22,7 +22,7 @@ const AdminAdd = ({ itemCategories, fetchFunc }) => {
     if (itemCategories)
       setItemSpecs({
         ...itemSpecs,
-        id: uuidv4().slice(0, 6),
+        id: uuidv4(),
         category: itemCategories[0] ? itemCategories[0].collectionKey : [],
       });
   }, [itemCategories]);
@@ -35,7 +35,11 @@ const AdminAdd = ({ itemCategories, fetchFunc }) => {
     event.preventDefault();
     const { category, name, imageUrl, price, id } = itemSpecs;
     try {
-      await updateItemToCollection(category, { name, imageUrl, price, id });
+      await updateItemToCollection(
+        category,
+        { name, imageUrl, price, id },
+        "add"
+      );
       alert("Item Added");
       fetchFunc();
       setItemSpecs({
@@ -100,6 +104,12 @@ const AdminAdd = ({ itemCategories, fetchFunc }) => {
         />
         <CustomButton>ADD NEW ITEM</CustomButton>
       </form>
+      <div
+        className="dashboard-image-container"
+        style={{ backgroundImage: `url(${itemSpecs.imageUrl})` }}
+      >
+        <span className="dashboard-image-preview">IMAGE PREVIEW</span>
+      </div>
     </div>
   );
 };
