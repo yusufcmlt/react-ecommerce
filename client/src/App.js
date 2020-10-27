@@ -58,10 +58,6 @@ const App = ({ currentUser, setCurrentUser }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    console.log(userLoading);
-  }, [currentUser]);
-
   return (
     <div className="app-container">
       <Header />

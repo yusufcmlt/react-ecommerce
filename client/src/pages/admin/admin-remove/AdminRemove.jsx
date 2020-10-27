@@ -71,7 +71,7 @@ const AdminRemove = ({ adminItems, fetchFunc }) => {
             onChange={handleChange}
           />
         </span>
-        <span>
+        <span className="page-number">
           <label>Page</label>
           <h2>{pageNumber}</h2>
         </span>

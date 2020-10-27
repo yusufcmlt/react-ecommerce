@@ -4,6 +4,8 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  @media (max-width: 768px) {
+  }
 
   .title {
     width: 100%;
@@ -18,6 +20,13 @@
       font-size: 20px;
       font-weight: bold;
     }
+    @media (max-width: 768px) {
+      width: 280px;
+
+      & :last-child {
+        margin-bottom: 20px;
+      }
+    }
 
     .item-add-input {
       font-family: "Rubik", sans-serif;
@@ -28,6 +37,10 @@
       border-radius: 5px;
       box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.472);
       text-indent: 10px;
+      @media (max-width: 768px) {
+        width: 280px;
+        margin: 10px 0;
+      }
     }
   }
   .dashboard-image-container {
@@ -41,6 +54,9 @@
     font-size: 30px;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.472);
     background-size: cover;
+    @media (max-width: 768px) {
+      display: none;
+    }
 
     .dashboard-image-preview {
       background-color: rgba(255, 255, 255, 0.055);

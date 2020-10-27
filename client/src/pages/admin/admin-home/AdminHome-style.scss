@@ -34,3 +34,28 @@
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .dashboard-home-container {
+    flex-direction: column;
+    .dashboard-home-content {
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      &:last-child {
+        margin-bottom: 20px;
+      }
+      .dashboard-total {
+        width: 80%;
+        height: 180px;
+        margin: 20px 0;
+        .name {
+          font-size: 25px;
+        }
+        .count {
+          font-size: 80px;
+        }
+      }
+    }
+  }
+}
