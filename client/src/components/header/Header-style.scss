@@ -52,8 +52,8 @@ $break-medium: 768px;
     font-size: 25px;
 
     @media (max-width: $break-medium) {
-      flex-direction: column;
-      justify-content: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
       align-items: flex-end;
     }
 
@@ -69,7 +69,7 @@ $break-medium: 768px;
         width: 100px;
         flex-direction: column;
         font-size: 15px;
-        padding: 5px 0;
+        padding: 4px 0;
         background-color: rgb(245, 245, 245);
       }
     }
