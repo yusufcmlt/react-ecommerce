@@ -48,13 +48,14 @@ export const updateItemToCollection = async (
       await categoryRef.update({
         items: firebase.firestore.FieldValue.arrayUnion(collectionData),
       });
-    } else {
+    } else if (whatToDo === "remove") {
       await categoryRef.update({
         items: firebase.firestore.FieldValue.arrayRemove(collectionData),
       });
+      console.log(collectionData);
     }
   } catch (error) {
-    console.log("Error adding item: ", error.message);
+    console.log("Error updating item list: ", error.message);
   }
 };
 
