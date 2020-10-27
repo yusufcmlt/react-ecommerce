@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { createStructuredSelector } from "reselect";
@@ -14,11 +14,19 @@ import CheckOut from "./pages/checkout/Checkout";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase-utils";
 import { setCurrentUser } from "./redux/user/user-actions";
-import { selectCurrentUser } from "./redux/user/user-selectors";
+import {
+  selectCurrentUser,
+  selectIsUserAdmin,
+} from "./redux/user/user-selectors";
 import { Footer } from "./components/footer/Footer";
 import Admin from "./pages/admin/Admin";
 
 const App = ({ currentUser, setCurrentUser }) => {
+  const [userLoading, setUserLoading] = useState({
+    loading: true,
+    isAdmin: false,
+  });
+
   useEffect(() => {
     let unsubscribeFromAuth = null;
 
@@ -28,6 +36,7 @@ const App = ({ currentUser, setCurrentUser }) => {
         const userRef = await createUserProfileDocument(userAuth);
 
         userRef.onSnapshot((snapShot) => {
+          setUserLoading({ loading: false, isAdmin: snapShot.data().isAdmin });
           setCurrentUser({
             id: snapShot.id,
             ...snapShot.data(),
@@ -36,7 +45,10 @@ const App = ({ currentUser, setCurrentUser }) => {
       }
 
       //No user or signing out => null data.
-      setCurrentUser(userAuth);
+      else {
+        setUserLoading({ loading: false, isAdmin: false });
+        setCurrentUser(userAuth);
+      }
     });
 
     //Closing subscription
@@ -45,6 +57,10 @@ const App = ({ currentUser, setCurrentUser }) => {
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    console.log(userLoading);
+  }, [currentUser]);
 
   return (
     <div className="app-container">
@@ -73,7 +89,18 @@ const App = ({ currentUser, setCurrentUser }) => {
             );
           }}
         />
-        <Route path={process.env.PUBLIC_URL + "/admin"} component={Admin} />
+        <Route
+          path={process.env.PUBLIC_URL + "/admin"}
+          render={() =>
+            userLoading.loading ? (
+              <h1>Loading...</h1>
+            ) : userLoading.isAdmin ? (
+              <Admin />
+            ) : (
+              <Redirect to={process.env.PUBLIC_URL + "/"} />
+            )
+          }
+        />
         <Route render={() => <Redirect to={process.env.PUBLIC_URL + "/"} />} />
       </Switch>
       <Footer />

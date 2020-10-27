@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { auth } from "../../firebase/firebase-utils";
 import { connect } from "react-redux";
@@ -7,21 +7,14 @@ import { createStructuredSelector } from "reselect";
 import CartIcon from "../cart-icon/CartIcon";
 import CartDropdown from "../cart-dropdown/CartDropdown";
 import { selectCartHidden } from "../../redux/cart/cart-selectors";
-import { selectCurrentUser } from "../../redux/user/user-selectors";
+import {
+  selectCurrentUser,
+  selectIsUserAdmin,
+} from "../../redux/user/user-selectors";
 
 import "./Header-style.scss";
-//import sportwear from "../../assets/sport-wear.png";
-//import { ReactComponent as Logo } from "../../assets/sport-wear.svg";
 
-const Header = ({ currentUser, hidden }) => {
-  const [isUserAdmin, setUserAdmin] = useState(false);
-
-  useEffect(() => {
-    currentUser && currentUser.isAdmin
-      ? setUserAdmin(true)
-      : setUserAdmin(false);
-  }, [currentUser]);
-
+const Header = ({ currentUser, hidden, isAdmin }) => {
   return (
     <div className="header">
       <Link className="logo-container" to={process.env.PUBLIC_URL + "/"}>
@@ -29,7 +22,7 @@ const Header = ({ currentUser, hidden }) => {
         WEARSOMTN
       </Link>
       <div className="options">
-        {isUserAdmin ? (
+        {isAdmin ? (
           <Link
             className="option is-admin"
             to={process.env.PUBLIC_URL + "/admin"}
@@ -52,9 +45,13 @@ const Header = ({ currentUser, hidden }) => {
         </a>
 
         {currentUser ? (
-          <div className="option" onClick={() => auth.signOut()}>
+          <Link
+            className="option"
+            onClick={() => auth.signOut()}
+            to={process.env.PUBLIC_URL + "/"}
+          >
             SIGN OUT
-          </div>
+          </Link>
         ) : (
           <Link className="option" to={process.env.PUBLIC_URL + "/signin"}>
             SIGN IN
@@ -70,6 +67,7 @@ const Header = ({ currentUser, hidden }) => {
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser,
   hidden: selectCartHidden,
+  isAdmin: selectIsUserAdmin,
 });
 
 export default connect(mapStateToProps)(Header);
