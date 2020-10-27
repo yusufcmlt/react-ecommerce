@@ -96,6 +96,7 @@ export const selectAdminItems = createSelector(
             ...allItems,
             ...collections[collection].items.map((item) => ({
               ...item,
+              price: Number(item.price),
               category: { name: collection, dbid: collections[collection].id },
             })),
           ];
