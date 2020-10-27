@@ -15,6 +15,10 @@ const AdminRemove = ({ adminItems, fetchFunc }) => {
     nameQuery: "",
     categoryQuery: "",
   });
+  const [sortOrders, setSortOrders] = useState({
+    name: 1,
+    price: 1,
+  });
 
   //getting page numbers
   useEffect(() => {
@@ -40,6 +44,21 @@ const AdminRemove = ({ adminItems, fetchFunc }) => {
     setFilterQueries({ ...filterQueries, [name]: value.toLowerCase() });
     setPageNumber(1);
   };
+
+  //Dynamic sorting list items
+  const handleSort = (sortOrder, sortBy) => {
+    let copyFiltered = [...filteredItems];
+    copyFiltered.sort((firstItem, secondItem) => {
+      if (firstItem[sortBy] < secondItem[sortBy]) {
+        return -1 * sortOrder;
+      } else if (firstItem[sortBy] > secondItem[sortBy]) {
+        return 1 * sortOrder;
+      } else return 0 * sortOrder;
+    });
+    setPageNumber(1);
+    setFilteredItems([...copyFiltered]);
+    setSortOrders({ ...sortOrders, [sortBy]: sortOrder * -1 });
+  };
   return (
     <div className="dashboard-item-remove-container">
       <h1 className="title">REMOVE AN ITEM</h1>
@@ -51,6 +70,10 @@ const AdminRemove = ({ adminItems, fetchFunc }) => {
             name="nameQuery"
             onChange={handleChange}
           />
+        </span>
+        <span>
+          <label>Page</label>
+          <h2>{pageNumber}</h2>
         </span>
         <span className="filter">
           <label>Filter Items by Category</label>
@@ -67,13 +90,35 @@ const AdminRemove = ({ adminItems, fetchFunc }) => {
           <span>Image</span>
         </div>
         <div className="header-block">
-          <span>Name</span>
+          <span
+            onClick={() => {
+              handleSort(sortOrders.name, "name");
+            }}
+          >
+            Name
+            {sortOrders.name > 0 ? (
+              <span className="sort-icon">&#10094;</span>
+            ) : (
+              <span className="sort-icon">&#10095;</span>
+            )}
+          </span>
         </div>
         <div className="header-block">
-          <span>category</span>
+          <span>Category</span>
         </div>
         <div className="header-block">
-          <span>Price</span>
+          <span
+            onClick={() => {
+              handleSort(sortOrders.price, "price");
+            }}
+          >
+            Price
+            {sortOrders.price > 0 ? (
+              <span className="sort-icon">&#10094;</span>
+            ) : (
+              <span className="sort-icon">&#10095;</span>
+            )}
+          </span>
         </div>
         <div className="header-block">
           <span>Remove</span>
