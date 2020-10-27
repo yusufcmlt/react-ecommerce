@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { connect } from "react-redux";
+
 import CustomButton from "../../components/custom-button/CustomButton";
 import AdminAdd from "./admin-add/AdminAdd";
 import AdminHome from "./admin-home/AdminHome";
 import AdminRemove from "./admin-remove/AdminRemove";
-import "./Admin-style.scss";
 
 import { fetchCollectionsStartAsync } from "../../redux/shop/shop-actions";
+
+import "./Admin-style.scss";
+
 const Admin = ({ fetchCollectionsStartAsync }) => {
   const [adminSection, setAdminSection] = useState("home");
 
